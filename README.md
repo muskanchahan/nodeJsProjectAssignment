@@ -1,43 +1,4 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NodeJs Project Assignment - Comic Book Store API</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            margin: 20px;
-            padding: 20px;
-            background-color: #2e2e2e;  
-            color: #f9f9f9;  
-        }
-        h1, h2, h3, h4 {
-            color: #ffffff;  
-        }
-        code {
-            background-color: #3a3a3a;  
-            color: #f8f8f2; 
-            padding: 2px 4px;
-            border-radius: 4px;
-        }
-        pre {
-            background-color: #3a3a3a;  
-            color: #f8f8f2;   
-            padding: 10px;
-            border-radius: 4px;
-            overflow-x: auto;
-        }
-        ul {
-            margin: 0;
-            padding: 0 20px;
-        }
-    </style>
-</head>
-<body>
-
 <h1>NodeJs Project Assignment</h1>
 
 <h2>Comic Book Store API</h2>
@@ -158,5 +119,4 @@ displayComics();</code></pre>
 
 <p>This README details the Comic Book Store API, a Node.js and Express.js application for managing comic book inventory. Key features include CRUD operations, pagination, and filtering by author, publication year, price, and condition. The project uses Sequelize for database management with MySQL, serving static files from the <code>/public</code> folder, where HTML, CSS, and JavaScript are integrated to create a user-friendly interface for managing comic books.</p>
 
-</body>
-</html>
+ 
