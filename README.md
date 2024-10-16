@@ -38,7 +38,7 @@
 <ol>
     <li>
         Clone the repository using Git:
-        <pre><code>git clone https://github.com/muskanchahan/nodeJsProjectAssignmen
+        <pre><code>git clone https://github.com/muskanchahan/nodeJsProjectAssignment
         </code></pre>
     </li>
     <li>
