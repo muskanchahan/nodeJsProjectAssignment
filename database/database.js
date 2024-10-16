@@ -1,12 +1,14 @@
 const { Sequelize, DataTypes } = require('sequelize');
+require('dotenv').config(); // Load environment variables from .env file
 
-const sequelize = new Sequelize('cosmic_db', 'root', 'muskan!!!@00$', {
-    host: 'localhost',
-    dialect: 'mysql',
+// Use environment variables for database configuration
+const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
 });
 
-// Fix: Use the correct syntax for defining the model
-const  cosmicBook = sequelize.define('cosmicBook', { // The first parameter should be a string
+// Define the `cosmicBook` model
+const cosmicBook = sequelize.define('cosmicBook', {
     bookName: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -54,3 +56,5 @@ module.exports = {
     sequelize,
     cosmicBook,
 };
+
+ 
