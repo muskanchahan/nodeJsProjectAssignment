@@ -73,7 +73,7 @@ h1, h2 {
 }
 
 #filter-form button {
-    background-color: #2196F3; /* Blue */
+    background-color: #45a049; /* Blue */
     color: white;
     padding: 12px 20px;
     border: none;
@@ -83,7 +83,7 @@ h1, h2 {
 }
 
 #filter-form button:hover {
-    background-color: #1976D2; /* Darker blue */
+    background-color: #45a049; /* Darker blue */
 }
 
 /* Comic Books section */
@@ -120,7 +120,7 @@ h1, h2 {
 
 /* Button styles in the table */
 #comic-table button {
-    background-color: #f44336; /* Red for delete button */
+    background-color: #45a049; /* Red for delete button */
     color: white;
     padding: 5px 10px;
     border: none;
@@ -129,7 +129,7 @@ h1, h2 {
 }
 
 #comic-table button:hover {
-    background-color: #d32f2f; /* Darker red */
+    background-color: #45a049; /* Darker red */
 }
 
 /* Responsiveness (optional) */
