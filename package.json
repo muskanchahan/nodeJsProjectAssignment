@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "express": "^4.21.1"
+  },
+  "name": "nodejsprojectassignment",
+  "version": "1.0.0",
+  "description": "this is the full stack node js project ",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/muskamchahan/nodeJsProjectAssignment.git"
+  },
+  "author": "Muskan Chauhan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/muskamchahan/nodeJsProjectAssignment/issues"
+  },
+  "homepage": "https://github.com/muskamchahan/nodeJsProjectAssignment#readme"
+}
