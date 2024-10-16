@@ -95,24 +95,59 @@
 </code></pre>
 
 <h4>Example JavaScript for API Interaction</h4>
-<p>In <code>script.js</code>, you can use the Fetch API or Axios to make requests to your backend:</p>
-<pre><code>const API_URL = '/api/comics'; // Adjust based on your API route
+<p>In <code>script.js</code>, use the following approach to interact with your backend:</p>
+<pre><code>const form = document.getElementById("comic-form");
+const tbody = document.getElementById('tbody');
+const paginationContainer = document.getElementById('pagination');
+let currentPage = 1;
+const limit = 5;
 
-async function fetchComics(filters = {}, pagination = { page: 1, limit: 10 }) {
-    const response = await fetch(\`\${API_URL}?author=\${filters.author}&year=\${filters.year}&price=\${filters.price}&condition=\${filters.condition}&page=\${pagination.page}&limit=\${pagination.limit}\`);
-    const data = await response.json();
-    return data;
+// Fetch comic books with pagination and filters
+function fetchComicBooks(page = 1, filters = {}) {
+    const params = new URLSearchParams({ page, limit, ...filters });
+
+    axios.get(`http://localhost:3000/comicbook?${params.toString()}`)
+        .then(response => {
+            const { comicBooks, totalBooks } = response.data;
+            tbody.innerHTML = ''; // Clear existing rows
+            comicBooks.forEach(addComicToTable);
+            updatePagination(totalBooks); // Update pagination controls
+        })
+        .catch(error => console.log('Error fetching comic book data:', error));
 }
 
-// Example function to display comics
-async function displayComics() {
-    const comics = await fetchComics();
-    const comicList = document.getElementById('comic-list');
-    comicList.innerHTML = comics.map(comic => \`&lt;div&gt;\${comic.title} by \${comic.author}&lt;/div&gt;\`).join('');
+// Add event listener for form submission
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    const newComicBook = {
+        bookName: document.getElementById('bookName').value,
+        authorName: document.getElementById('authorName').value,
+        yearOfPublication: document.getElementById('yearOfPublication').value,
+        price: document.getElementById('price').value,
+        discount: document.getElementById('discount').value || 0,
+        numberOfPages: document.getElementById('numberOfPages').value,
+        condition: document.getElementById('condition').value,
+        description: document.getElementById('description').value || ''
+    };
+
+    axios.post('http://localhost:3000/comicbook', newComicBook)
+        .then(result => addComicToTable(result.data)) // Add new comic to table
+        .catch(error => console.log('Error adding comic book', error));
+
+    form.reset(); // Reset the form
+});
+
+// Function to add a comic to the table
+function addComicToTable(book) {
+    // Create table rows for each comic with actions
 }
 
-// Call displayComics on page load
-displayComics();</code></pre>
+// Function to create buttons for actions (Edit/Delete)
+function createButton(text, onClick) {
+    // Create button element
+}
+</code></pre>
+
 
 <h3>Conclusion</h3>
 <p>This README provides an overview of the Comic Book Store API and instructions on how to integrate the frontend with the backend. By utilizing the <code>/public</code> folder to serve static files, you can create a comprehensive comic book management system.</p>
