@@ -4,7 +4,7 @@ const { Op } = require('sequelize');
  
 
 const getCosmicBook = async (req, res) => {
-    const { page = 1, limit = 3, author, year, price, condition, sortBy = 'bookName', order = 'ASC' } = req.query; // Destructure query parameters
+    const { page = 1, limit = 5, author, year, price, condition, sortBy = 'bookName', order = 'ASC' } = req.query; // Destructure query parameters
 
     try {
         // Set the limit and offset for pagination
@@ -56,7 +56,7 @@ const postCosmicBook = async (req, res) => {
         console.log('New book details created:', newCosmicBook);
     } catch (error) {
         console.log('Error creating book details:', error);
-        res.status(500).json({ error: 'Failed to create the item' });
+        res.status(500).json({ error: 'Failed to create the Book' });
     }
 };
 
