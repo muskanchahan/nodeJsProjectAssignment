@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comic Book Inventory</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Comic Book Inventory</h1>
+
+    <section>
+      <h2>Add a Comic Book</h2>
+      <form id="comic-form">
+        <div>
+          <label for="bookName">Book Name:</label>
+          <input type="text" id="bookName" placeholder="Enter Book Name" required>
+        </div>
+        <div>
+          <label for="authorName">Author Name:</label>
+          <input type="text" id="authorName" placeholder="Enter Author Name" required>
+        </div>
+        <div>
+          <label for="yearOfPublication">Year of Publication:</label>
+          <input type="number" id="yearOfPublication" placeholder="Enter Year" required>
+        </div>
+        <div>
+          <label for="price">Price:</label>
+          <input type="number" step="0.01" id="price" placeholder="Enter Price" required>
+        </div>
+        <div>
+          <label for="discount">Discount:</label>
+          <input type="number" step="0.01" id="discount" placeholder="Enter Discount (optional)">
+        </div>
+        <div>
+          <label for="numberOfPages">Number of Pages:</label>
+          <input type="number" id="numberOfPages" placeholder="Enter Number of Pages" required>
+        </div>
+        <div>
+          <label for="condition">Condition:</label>
+          <select id="condition" required>
+            <option value="new">New</option>
+            <option value="used">Used</option>
+          </select>
+        </div>
+        <div>
+          <label for="description">Description (optional):</label>
+          <textarea id="description" placeholder="Enter a description"></textarea>
+        </div>
+        <button type="submit">Add Comic Book</button>
+      </form>
+    </section>
+  
+    <section id="comic-books">
+        <h2>Comic Books Details</h2>
+        <table id="comic-table" border="1">
+          <thead>
+            <tr>
+              <th>Book Name</th>
+              <th>Author Name</th>
+              <th>Year</th>
+              <th>Price (Rs)</th>
+              <th>Discount</th>
+              <th>Pages</th>
+              <th>Condition</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+    </section>
+      
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
