@@ -50,7 +50,25 @@
         <button type="submit">Add Comic Book</button>
       </form>
     </section>
-  
+    <form id="filter-form">
+        <input type="text" id="filter-author" placeholder="Author" />
+        <input type="text" id="filter-year" placeholder="Year" />
+        <input type="text" id="filter-price" placeholder="Price" />
+        <input type="text" id="filter-condition" placeholder="Condition" />
+        <select id="sort-by">
+            <option value="bookName">Book Name</option>
+            <option value="price">Price</option>
+            <option value="yearOfPublication">Year</option>
+        </select>
+        <select id="sort-order">
+            <option value="ASC">Ascending</option>
+            <option value="DESC">Descending</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+    
+    <div id="pagination"></div>  
+    
     <section id="comic-books">
         <h2>Comic Books Details</h2>
         <table id="comic-table" border="1">
@@ -69,7 +87,7 @@
           </thead>
           <tbody id="tbody"></tbody>
         </table>
-    </section>
+    </section>  
       
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.1/axios.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
