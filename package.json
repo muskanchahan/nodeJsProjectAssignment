@@ -1,12 +1,16 @@
 {
   "dependencies": {
-    "express": "^4.21.1"
+    "body": "^5.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.21.1",
+    "mysql2": "^3.11.3",
+    "parser": "^0.1.4",
+    "sequelize": "^6.37.4"
   },
   "name": "nodejsprojectassignment",
   "version": "1.0.0",
   "description": "this is the full stack node js project ",
   "main": "app.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
